@@ -1,0 +1,5 @@
+#Comandos docker para criação de duas máquinas linux ubuntu como container:
+
+
+
+docker run -it --name server-1 --mount type=bind,source=/Users/user/data_to_container,target=/data --network=bridge ubuntu bash
