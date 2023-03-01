@@ -2,7 +2,7 @@
 
 ## Comandos docker para criação de duas máquinas linux ubuntu como container
 
->> docker volume volume create volume2servers -> Criando volume persistente de dados para o container
+>> docker volume create volume2servers -> Criando volume persistente de dados para o container
 
 >> docker network create --drive bridge net2servers -> Criando a própria rede do tipo bridge para a conexão dos servidores
 
