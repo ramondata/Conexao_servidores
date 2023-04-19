@@ -1,4 +1,6 @@
-## Criação de dois servers linux com conexão de acesso remoto
+![banner_server](https://raw.githubusercontent.com/ramondata/Conexao_servidores/master/server-status-check-maintenance-report-with-modern-flat-style-minimalist-green-color-theme_65709-88.avif)
+Criação de dois servers linux com conexão de acesso remoto
+==============
 
 ## Comandos docker para criação de duas máquinas linux ubuntu como container
 
