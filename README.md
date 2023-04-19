@@ -2,20 +2,26 @@
 Criação de dois servers linux com conexão de acesso remoto
 ==============
 
-## Comandos docker para criação de duas máquinas linux ubuntu como container
+###### Comandos `docker` para criação de duas máquinas linux ubuntu como container
 
->> docker volume create volume2servers -> Criando volume persistente de dados para o container
+> Criando volume persistente de dados para o container
+```
+docker volume create volume2servers 
+```
+> Criando a própria rede do tipo bridge para a conexão dos servidores
+```
+docker network create --drive bridge net2servers 
+```
+## Executando as `imagens` para serem `containers` de ubuntu
 
->> docker network create --drive bridge net2servers -> Criando a própria rede do tipo bridge para a conexão dos servidores
+```
+docker run -it --name server-1 --mount source=volume2servers,target=/data --network net2servers ubuntu bash
 
-## Executando as imagens para serem containers de ubuntu
+docker run -it --name server-2 --mount source=volume2servers,target=/data --network net2servers ubuntu bash
+```
 
->> docker run -it --name server-1 --mount source=volume2servers,target=/data --network net2servers ubuntu bash
-
->> docker run -it --name server-2 --mount source=volume2servers,target=/data --network net2servers ubuntu bash
-
-## Executar esses comandos dentro dos servers
-
+## Executar esses comandos dentro de cada server
+```
 $ apt-get update -y
 
 $ apt install iputils-ping -y
@@ -45,3 +51,4 @@ $ adduser user1 -> cadastre uma senha para o novo user
 $ ping < ip >
 
 $ ssh < user >@< ip > -> ssh user1@172.0.1.1
+```
